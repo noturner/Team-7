@@ -1,50 +1,64 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #6e6d6d;
-    color: #000;
-}
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+@font-face {
+    font-family:'fonteh1' ;
+    src: url(fontes/Garet-Heavy.otf);
 }
 
-.container img {
-    max-width: 100%;
-    height: auto;
+@font-face {
+    font-family:'fonteh2' ;
+    src: url(fontes/Garet-Book.ttf);
 }
-.parallax {
-    background-image: url('Imagens/Imagem\ do\ WhatsApp\ de\ 2023-11-10\ à\(s\)\ 14.02.25_58230162.jpg');
-    height: 500px; /* Altura desejada */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+@font-face {
+    font-family:'fonteh3' ;
+    src: url(fontes/Fontspring-DEMO-geometos_neue_light.otf);
 }
+
+html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #e6e5e5ce;
+    color: #000;
+    box-sizing: border-box;
+}
+
 header {
     background-color: #000;
     color: #fff;
+    position:relative;
     padding: 20px;
     text-align: center;
-}
-
-img { 
+    font-family:'fonteh2' ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100%;
-        height: auto;
-
-
+    
 }
+
+h1{
+    font-family: 'fonteh1';
+    margin: 0;
+    padding: 0;
+}
+
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    list-style-type: none;
 }
 
 nav ul li {
@@ -58,17 +72,303 @@ nav a {
     font-weight: bold;
 }
 
+p{
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+img#whats {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+    transition: filter 2s;
+}
+
+img#whats:hover {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+}
+/****** iNÍCIO ********/
+/* regra CSS para evitar o esticamento da imagem */
+
+#carrossel img {
+    display: none;
+    width: 100%;
+    height: 65vh;/*resolve o problema de capa gigante*/
+    object-fit: cover;/*resolve o problema de capa gigante*/
+    object-position: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.589);
+}
+
+#carrossel img:first-child {
+    display: block;
+}
+
+.noticias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 50px;
+    margin: 150px;
+    
+}
+
+.noticias h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'fonteh2';
+}
+
+.noticias p {
+    max-width: 90%;
+    text-align: justify;
+    font-family: 'fonteh3';
+}
+
 section {
-    padding: 40px;
+   
+    
     padding-left: 5em;
+    font-family: 'fonteh3';
+}
+
+div.noticias{
+    position: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    
+}
+
+.quadrados {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 100px;
+    margin: 30px;
+    
+    
+}
+
+.quadrado {
+    background-color: black;
+    color: white;
+    width: 300px; /* largura ajustada */
+    height: 300px; /* altura ajustada */
+    padding: 20px; /* padding ajustado */
+    margin: 15px;
+    line-height: 350px; /* altura ajustada */
+    transition: background-color 0.3s, background-color 0.3s;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.5s;
+}
+
+.quadrado:hover {
+    transform: translateY(-10px);
+    background-color: #ff9036;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.image-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    padding: 10px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.image-container img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.texto-lorem {
+    padding: 20px;
+    font-family: 'fonteh3';
+    opacity: 0;
+    animation: fadeIn 17s forwards ;
+    text-align: justify;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+/****** PROJETOS ********/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagem-texto {
+    flex: 1 1 150px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row; /* Alterado de column para row */
+    align-items: center;
+}
+
+.imagemp {
+    width: 30%;
+    height: auto;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.textop {
+    font-size: 14px;
+    margin-bottom:50px;
+    text-align: justify;
+    align-items: center;
+
+    
+    
+}
+
+@media (max-width: 768px) {
+    .textop {
+        font-size: 13px;
+    }
+}
+
+.imagemp:hover {
+    transform: scale(1.1);
+}
+
+.textop:hover {
+    opacity: 1.9;
+}
+
+/****** SOBRE ********/
+
+.lorem2 {
+    animation: fadein 2s;
+    font-family: 'fonteh2';
+    margin-bottom: 80px;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Estilização da imagem */
+
+.imageS {
+    width: 100%;
+    height: auto;
+    animation: fadein 2s;
+}
+
+/* Estilização do texto */
+
+.textS {
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px;
+    box-sizing: border-box;
+    animation: fadein 2s;
+}
+
+/****** CONTATO ********/
+
+/* Estilização da imagem de fundo */
+
+.bgimg-full {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('Imagens/galax4.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: opacity(0.6);
+    z-index: -1;
+}
+
+/* Estilização do texto */
+
+.textContent {
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    display: flex;
+    position: relative;
+    margin-top: 250px;
+}
+
+a#acontato{
+    text-decoration: none;
+    color: #000000;
+
+}
+a#acontato:hover{
+    transform: translateY(-10px);
+    background-color: #ff9036;
+}
+h2#t2 {
+    color: #030303;
+    padding: 40px;
+    font-size: 23px;
+    animation: fadein 3s;
+    font-family: 'fonteh1';
+    
+}
+
+p#p2 {
+    color: #080808;
+    text-align: center;
+    padding: 8px;
+    font-size: 15px;
+    animation: fadein 2s;
+    font-family: 'fonteh2';
+    margin: 31px;
+    
 }
 
 footer {
-    background-color: #000;
+    display: flex;
     color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
+    bottom: 0 ;
+    background-color: #1b1b1b;
+    padding: 35px;
+    height: 50px;
     width: 100%;
-    bottom: 0;
-}
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 100px;
+
+
+    }
